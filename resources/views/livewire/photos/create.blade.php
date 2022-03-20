@@ -12,7 +12,7 @@
 				<form>
             <div class="form-group">
                 <label for="image"></label>
-                <input wire:model="image" type="text" class="form-control" id="image" placeholder="Image">@error('image') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="image" type="file" class="form-control" id="image" placeholder="Image">@error('image') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="title"></label>

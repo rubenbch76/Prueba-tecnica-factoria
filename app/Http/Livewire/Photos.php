@@ -4,11 +4,13 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 use App\Models\Photo;
 
 class Photos extends Component
 {
     use WithPagination;
+    use WithFileUploads;
 
 	protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $image, $title;
@@ -40,12 +42,13 @@ class Photos extends Component
     public function store()
     {
         $this->validate([
-		'image' => 'required',
+		'image' => 'image|max:1024',
 		'title' => 'required',
         ]);
 
+
         Photo::create([ 
-			'image' => $this-> image,
+			'image' => $this-> image->store('uploads', 'public'),
 			'title' => $this-> title
         ]);
         
@@ -68,14 +71,14 @@ class Photos extends Component
     public function update()
     {
         $this->validate([
-		'image' => 'required',
+		'image' => 'image|max:1024',
 		'title' => 'required',
         ]);
 
         if ($this->selected_id) {
 			$record = Photo::find($this->selected_id);
             $record->update([ 
-			'image' => $this-> image,
+			'image' => $this-> image->store('uploads', 'public'),
 			'title' => $this-> title
             ]);
 

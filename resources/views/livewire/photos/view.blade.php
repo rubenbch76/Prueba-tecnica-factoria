@@ -41,7 +41,7 @@
 							@foreach($photos as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->image }}</td>
+								<td><img src="{{ asset('storage').'/'.$row->image }}" alt=""></td>
 								<td>{{ $row->title }}</td>
 								<td width="90">
 								<div class="btn-group">
