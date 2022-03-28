@@ -1,0 +1,97 @@
+/* Reset margin - padding */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video , button, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Avoid problems with images */
+img , picture , video , iframe , figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;        
+  object-position: center center;
+}
+
+/* Reset all anchor... */
+a {
+  display: block;
+}
+
+/* ... except if they are in paragraphs */
+p a {
+  display: inline;
+}
+
+/* Remove embellishments in all <li> */
+li {
+  list-style-type: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove styles from most of text tags */
+h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color:inherit;
+}
+
+/* Avoid quotes pseudoelements issues */
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Leveling fonts in forms */
+form , input, textarea, select , button , label {
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color:inherit;
+    appearance: none;
+}
+
+/* Reset tables */
+table , tr , td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Avoid SVG problems */
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+/* Fonts in all web */
+body {
+  min-height  : 100vh;
+  font-size   : 100%;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -2,7 +2,9 @@
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
+
 			<div class="card">
+
 				<div class="card-header">
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
@@ -19,19 +21,20 @@
 					</div>
 				</div>
 				
-				<div class="card-body">
+				<div class="card-main">
 					@include('livewire.photos.create')
 					@include('livewire.photos.update')
 					<div>
 					
-							@foreach($photos as $row)
-							
-								<div class="card col-lg-4 col-md-6 col-xs-12">									
-									  <img class="card-img-top" src="{{ asset('storage').'/'.$row->image }}" alt="{{ $row->title }}">
-									  <div class="card-main">
+						@foreach($photos as $row)
+
+							<div class='cards-container'>
+								<div class="card col-lg-4 col-md-6 col-xs-12">								
+									<img class="card-img-top" src="{{ asset('storage').'/'.$row->image }}" alt="{{ $row->title }}">
+									<div class="card-main">
 										<h5 class="card-title">{{ $row->title }}</h2>
-									  </div>
-									  <div class="card-body"> 
+									</div>
+									<div class="card-body"> 
 										<div class="btn-group">
 											<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											Opciones
@@ -41,14 +44,16 @@
 											<a class="dropdown-item" onclick="confirm('Confirm Delete Photo id {{$row->id}}? \nDeleted Photos cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Eliminar </a>   
 											</div>
 										</div>
-									  </div>									
+									</div>									
 								</div>
+							</div>
 
-							@endforeach
+						@endforeach
 											
 						{{ $photos->links() }}
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,96 @@
+.cards-container {
+    margin: 6rem auto 0 auto;
+    
+    .card {
+        margin: 2.8rem;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 0;
+        width: 25rem;
+        //background: $second-color;
+        box-shadow: inset 0 -3em 3em rgba($first-color-light, 0.1),
+                   0.2em 0.2em 0.7em rgba($first-color-light, 0.3);
+        background: $gallery-color;
+            
+        img, .card-img-top {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px; 
+            height: 12rem;
+            object-fit: cover;
+        }
+
+        .card-main {
+            height: 3.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            //background: $gallery-color;
+            box-shadow: inset 0 -1.2em 3em rgba($first-color, 0.2);
+                 
+            .card-title {
+                //color: $second-color;  
+                font-weight: 400;
+                margin: 0;
+            }    
+        }
+
+        .card-body {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;  
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 1.5rem 0 2.5rem 0; 
+            
+            
+            > *:first-child {
+                padding-bottom: 0.8rem;
+            }
+
+            .card-subtitle {
+                //color: $first-color;  
+                font-weight: 600;
+                margin: 0;
+            }
+
+            .card-description {
+                flex-direction: column;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+
+                .card-text {
+                    //color: $gallery-color;  
+                    font-weight: 400;
+                    margin: 0;
+                }
+            }
+        }
+
+        /* .card-btns {
+            text-align: center;
+
+            .btn {
+                color: $first-color;
+                font-weight: bold;
+                margin: 1rem;
+                box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+                -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2); 
+            }
+        } */
+        
+        &:hover {
+            transform: scale(1.005);
+        }
+
+        &:active {
+            opacity: 86%;
+        }
+    }
+}
