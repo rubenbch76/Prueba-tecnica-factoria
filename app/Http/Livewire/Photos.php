@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use App\Models\Photo;
+use Illuminate\Support\Facades\Auth;
 
 class Photos extends Component
 {
@@ -21,8 +22,9 @@ class Photos extends Component
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.photos.view', [
             'photos' => Photo::latest()
-						->orWhere('image', 'LIKE', $keyWord)
-						->orWhere('title', 'LIKE', $keyWord)
+						/* ->orWhere('image', 'LIKE', $keyWord)
+						->orWhere('title', 'LIKE', $keyWord) */
+                        ->orWhere('user_id', 'LIKE', Auth::user()->id)
 						->paginate(10),
         ]);
     }
@@ -42,14 +44,15 @@ class Photos extends Component
     public function store()
     {
         $this->validate([
-		'image' => 'image|max:1024',
-		'title' => 'required',
+		'image' => 'image|max:2048',
+		'title' => 'required'
         ]);
 
 
         Photo::create([ 
 			'image' => $this-> image->store('uploads', 'public'),
-			'title' => $this-> title
+			'title' => $this-> title,
+            'user_id' => Auth::user()->id
         ]);
         
         $this->resetInput();

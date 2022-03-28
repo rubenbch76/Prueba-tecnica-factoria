@@ -8,6 +8,21 @@ body {
         color: $second-color;
     }
 
+    .btn-orange {
+        background-color: $second-color; 
+        color: $gallery-color; 
+        border-color: $gallery-color;
+
+        &:hover, &:focus, &:active {
+            background-color: $gallery-color;
+            border-color: $gallery-color;
+            color: $second-color;
+            text-decoration: none;
+        }
+        
+    }
+
+   
     .navbar-brand {
         font-weight: 100;
         text-transform: uppercase;
@@ -37,6 +52,20 @@ body {
         line-height: 0.1em;
         letter-spacing: 0.15rem;
         word-spacing: 0.4rem;
+        color: $second-color;
+
+        .form-control {
+            background: $gallery-color;
+            height: 1.5rem;
+    
+            &:hover, &:focus, &:active {
+                background-color: $second-color-light;
+                border-color: $gallery-color;
+                color: $gallery-color;
+                text-decoration: none;
+            }
+        }
+        
     
         .section-title-line {
             background: $body-bg;

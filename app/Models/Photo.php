@@ -13,6 +13,11 @@ class Photo extends Model
 
     protected $table = 'photos';
 
-    protected $fillable = ['image','title'];
+    protected $fillable = ['image','title', 'user_id'];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 	
 }

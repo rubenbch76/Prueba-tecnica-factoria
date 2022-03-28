@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('image');
-            $table->string('title');          
+            $table->string('title'); 
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+
             $table->timestamps();
         });
     }

@@ -1,34 +1,29 @@
 @section('title', __('Photos'))
+
 <div class="container-fluid">
-	<div class="row justify-content-center">
-		<div class="col-md-12">
 
-			<div class="card">
-
-				<div class="card-header">
+				<div class="section-title">
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
 							<h4><i class="fab fa-laravel text-info"></i>
 							Galería de Imágenes </h4>
-						</div>
-						
+						</div>						
 						<div>
 							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Buscar imagen">
 						</div>
-						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
+						<div class="btn btn-orange btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
 						<i class="fa fa-plus"></i>  Añadir imagen
 						</div>
 					</div>
 				</div>
 				
-				<div class="card-main">
+				<div class="container cards-container">
 					@include('livewire.photos.create')
 					@include('livewire.photos.update')
-					<div>
+					<div class="row justify-content-center">
 					
 						@foreach($photos as $row)
 
-							<div class='cards-container'>
 								<div class="card col-lg-4 col-md-6 col-xs-12">								
 									<img class="card-img-top" src="{{ asset('storage').'/'.$row->image }}" alt="{{ $row->title }}">
 									<div class="card-main">
@@ -36,7 +31,7 @@
 									</div>
 									<div class="card-body"> 
 										<div class="btn-group">
-											<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<button type="button" class="btn btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 											Opciones
 											</button>
 											<div class="dropdown-menu dropdown-menu-right">
@@ -46,15 +41,8 @@
 										</div>
 									</div>									
 								</div>
-							</div>
-
-						@endforeach
-											
+						@endforeach											
 						{{ $photos->links() }}
 					</div>
 				</div>
-
-			</div>
-		</div>
-	</div>
 </div>

@@ -14816,6 +14816,17 @@ body .navbar {
   background: #ffa600;
   color: #ffa600;
 }
+body .btn-orange {
+  background-color: #ffa600;
+  color: #353535;
+  border-color: #353535;
+}
+body .btn-orange:hover, body .btn-orange:focus, body .btn-orange:active {
+  background-color: #353535;
+  border-color: #353535;
+  color: #ffa600;
+  text-decoration: none;
+}
 body .navbar-brand {
   font-weight: 100;
   text-transform: uppercase;
@@ -14841,6 +14852,17 @@ body .section-title {
   line-height: 0.1em;
   letter-spacing: 0.15rem;
   word-spacing: 0.4rem;
+  color: #ffa600;
+}
+body .section-title .form-control {
+  background: #353535;
+  height: 1.5rem;
+}
+body .section-title .form-control:hover, body .section-title .form-control:focus, body .section-title .form-control:active {
+  background-color: #ffdc9a;
+  border-color: #353535;
+  color: #353535;
+  text-decoration: none;
 }
 body .section-title .section-title-line {
   background: #353535;
@@ -14905,12 +14927,11 @@ body footer .footer-container .social-media > :not(last-child) {
 }
 
 .cards-container {
-  margin: 6rem auto 0 auto;
+  margin: 2rem auto 0 auto;
 }
 .cards-container .card {
   margin: 2.8rem;
   border-radius: 15px;
-  overflow: hidden;
   padding: 0;
   width: 25rem;
   box-shadow: inset 0 -3em 3em rgba(240, 240, 240, 0.1), 0.2em 0.2em 0.7em rgba(240, 240, 240, 0.3);
@@ -14935,7 +14956,7 @@ body footer .footer-container .social-media > :not(last-child) {
      object-fit: cover;
 }
 .cards-container .card .card-main {
-  height: 3.5rem;
+  height: 2.5rem;
   text-align: center;
   display: flex;
   align-items: center;
@@ -14944,18 +14965,18 @@ body footer .footer-container .social-media > :not(last-child) {
   box-shadow: inset 0 -1.2em 3em rgba(189, 189, 189, 0.2);
 }
 .cards-container .card .card-main .card-title {
-  font-weight: 400;
+  color: #ffa600;
+  font-weight: 200;
   margin: 0;
 }
 .cards-container .card .card-body {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 1.5rem 0 2.5rem 0;
+  padding: 1.5rem 0 0.5rem 0;
 }
 .cards-container .card .card-body > *:first-child {
   padding-bottom: 0.8rem;
@@ -14973,7 +14994,7 @@ body footer .footer-container .social-media > :not(last-child) {
   margin: 0;
 }
 .cards-container .card .card-body .card-description .card-text {
-  font-weight: 400;
+  font-weight: 200;
   margin: 0;
 }
 .cards-container .card:hover {
