@@ -7,6 +7,7 @@ use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use App\Models\Photo;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class Photos extends Component
 {
@@ -14,7 +15,7 @@ class Photos extends Component
     use WithFileUploads;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $image, $title;
+    public $selected_id, $keyWord, $image, $imageOld, $title;
     public $updateMode = false;
 
     public function render()
@@ -22,9 +23,9 @@ class Photos extends Component
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.photos.view', [
             'photos' => Photo::latest()
-						/* ->orWhere('image', 'LIKE', $keyWord)
-						->orWhere('title', 'LIKE', $keyWord) */
-                        ->orWhere('user_id', 'LIKE', Auth::user()->id)
+                        ->where('user_id', 'LIKE', Auth::user()->id)
+						/* ->orWhere('image', 'LIKE', $keyWord) */
+						->where('title', 'LIKE', $keyWord)                      
 						->paginate(10),
         ]);
     }
@@ -65,7 +66,7 @@ class Photos extends Component
         $record = Photo::findOrFail($id);
 
         $this->selected_id = $id; 
-		$this->image = $record-> image;
+		$this->imageOld = $record-> image;
 		$this->title = $record-> title;
 		
         $this->updateMode = true;
@@ -73,16 +74,24 @@ class Photos extends Component
 
     public function update()
     {
-        $this->validate([
-		'image' => 'image|max:1024',
-		'title' => 'required',
-        ]);
+        $updatedImage = '';
+
+        if($this->image == null) {
+            $this->validate(['title' => 'required']);
+            $updatedImage = $this->imageOld;
+        }else{  
+            $this->validate([
+                'image' => 'image|max:2048',
+                'title' => 'required']);          
+            $updatedImage = $this->image->store('uploads', 'public');
+        }
 
         if ($this->selected_id) {
 			$record = Photo::find($this->selected_id);
             $record->update([ 
-			'image' => $this-> image->store('uploads', 'public'),
-			'title' => $this-> title
+			'image' => $updatedImage,
+			'title' => $this-> title,
+            'user_id' => Auth::user()->id
             ]);
 
             $this->resetInput();

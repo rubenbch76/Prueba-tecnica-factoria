@@ -8,6 +8,8 @@ body {
         color: $second-color;
     }
 
+ 
+
     .btn-orange {
         background-color: $second-color; 
         color: $gallery-color; 
@@ -18,8 +20,20 @@ body {
             border-color: $gallery-color;
             color: $second-color;
             text-decoration: none;
-        }
-        
+        }       
+    }
+
+    .btn-gray {
+        background-color: $gallery-color; 
+        color: $second-color; 
+        border-color: $second-color;
+
+        &:hover, &:focus, &:active {
+            background-color: $second-color;
+            border-color: $gallery-color;
+            color: $gallery-color;
+            text-decoration: none;
+        }       
     }
 
    
@@ -45,7 +59,7 @@ body {
     }
 
     .section-title {
-        border-bottom: 1px solid $second-color; 
+        border-bottom: 1px solid $gallery-color; 
         font-size: 2rem;
         font-weight: 100;
         text-transform: uppercase;
@@ -53,6 +67,7 @@ body {
         letter-spacing: 0.15rem;
         word-spacing: 0.4rem;
         color: $second-color;
+    
 
         .form-control {
             background: $gallery-color;
@@ -79,7 +94,7 @@ body {
     
             &:focus {
                 color: $first-color;
-                background-color: $second-color;
+                background-color: $gallery-color;
                 border-color: rgba($gallery-color, 0.25);
                 outline: 0;
                 box-shadow: 0 0 0 0.25rem rgba($gallery-color, 0.25);
@@ -100,6 +115,11 @@ body {
             &:hover, &:active, &:focus {
                 box-shadow: 0 0 0 0.25rem rgba($gallery-color, 0.25);
             }
+        }
+
+        img {
+            width: 300px;
+            margin-top: 15px;
         }
     }
 

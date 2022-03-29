@@ -14764,6 +14764,7 @@ h3 {
 .welcome-bg .welcome-container .welcome-text .card .card-body .row .btn-link {
   text-align: left;
   padding: 1rem 0 0 0;
+  color: #353535;
 }
 
 #app {
@@ -14827,6 +14828,17 @@ body .btn-orange:hover, body .btn-orange:focus, body .btn-orange:active {
   color: #ffa600;
   text-decoration: none;
 }
+body .btn-gray {
+  background-color: #353535;
+  color: #ffa600;
+  border-color: #ffa600;
+}
+body .btn-gray:hover, body .btn-gray:focus, body .btn-gray:active {
+  background-color: #ffa600;
+  border-color: #353535;
+  color: #353535;
+  text-decoration: none;
+}
 body .navbar-brand {
   font-weight: 100;
   text-transform: uppercase;
@@ -14845,7 +14857,7 @@ body .text-info {
   color: #ffa600 !important;
 }
 body .section-title {
-  border-bottom: 1px solid #ffa600;
+  border-bottom: 1px solid #353535;
   font-size: 2rem;
   font-weight: 100;
   text-transform: uppercase;
@@ -14870,7 +14882,7 @@ body .section-title .section-title-line {
 }
 body form .form-control:focus {
   color: #bdbdbd;
-  background-color: #ffa600;
+  background-color: #353535;
   border-color: rgba(53, 53, 53, 0.25);
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(53, 53, 53, 0.25);
@@ -14890,6 +14902,10 @@ body form .form-check-input:checked {
 }
 body form .form-check-input:hover, body form .form-check-input:active, body form .form-check-input:focus {
   box-shadow: 0 0 0 0.25rem rgba(53, 53, 53, 0.25);
+}
+body form img {
+  width: 300px;
+  margin-top: 15px;
 }
 body table {
   /* & > * {
