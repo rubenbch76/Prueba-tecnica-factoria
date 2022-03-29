@@ -13,7 +13,7 @@
             <ul class="navbar-nav mr-auto">
                 <!--Nav Bar Hooks - Do not delete!!-->
                 <li class="nav-item">
-                    <a href="{{ url('/photos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Photos</a> 
+                    <a href="{{ url('/photos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Mis fotos</a> 
                 </li>
             </ul>
             @endauth()

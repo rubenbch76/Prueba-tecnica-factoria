@@ -19,14 +19,13 @@
 					</div>
 				</div>
 				
-				<div class="container cards-container">
+				<div class="cards-container">
 					@include('livewire.photos.create')
 					@include('livewire.photos.update')
-					<div class="row justify-content-center">
-					
+										
 						@foreach($photos as $row)
 
-								<div class="card col-lg-4 col-md-6 col-xs-12">				<a href="{{ asset('storage').'/'.$row->image }}">	
+								<div class="card col-xs-12">				<a href="{{ asset('storage').'/'.$row->image }}">	
 										<img class="card-img-top" src="{{ asset('storage').'/'.$row->image }}" alt="{{ $row->title }}">
 									</a>
 									<div class="card-main">
@@ -45,8 +44,10 @@
 									</div>									
 								</div>
 
-						@endforeach											
-						{{ $photos->links() }}
-					</div>
+						@endforeach																
 				</div>
+				<div class="pagination">
+					{{ $photos->links() }}
+				</div>
+				
 </div>

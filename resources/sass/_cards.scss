@@ -1,13 +1,17 @@
 .cards-container {
     margin: 2rem auto 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
     
     .card {
         margin: 2.8rem;
         border-radius: 15px;
-        //overflow: hidden;
         padding: 0;
-        width: 25rem;
-        //background: $second-color;
+        width: 20rem;
         box-shadow: inset 0 -3em 3em rgba($first-color-light, 0.1),
                    0.2em 0.2em 0.7em rgba($first-color-light, 0.3);
         background: $gallery-color;
@@ -26,7 +30,6 @@
             align-items: center;
             justify-content: center;
             margin: 0;
-            //background: $gallery-color;
             box-shadow: inset 0 -1.2em 3em rgba($first-color, 0.2);
                  
             .card-title {
@@ -38,7 +41,6 @@
 
         .card-body {
             display: flex;
-            //flex-wrap: wrap;
             flex-direction: column;
             text-align: center;  
             align-items: center;
@@ -51,8 +53,7 @@
                 padding-bottom: 0.8rem;
             }
 
-            .card-subtitle {
-                //color: $first-color;  
+            .card-subtitle { 
                 font-weight: 600;
                 margin: 0;
             }
@@ -66,25 +67,12 @@
                 margin: 0;
 
                 .card-text {
-                    //color: $gallery-color;  
                     font-weight: 200;
                     margin: 0;
                 }
             }
 
         }
-
-        /* .card-btns {
-            text-align: center;
-
-            .btn {
-                color: $first-color;
-                font-weight: bold;
-                margin: 1rem;
-                box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
-                -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2); 
-            }
-        } */
         
         &:hover {
             transform: scale(1.005);
@@ -95,3 +83,37 @@
         }
     }
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+
+    .page-item {
+        background-color: $second-color; 
+        color: $gallery-color; 
+        border-color: $gallery-color;
+        &:hover, &:focus, &:active, &:disabled {
+            background-color: $gallery-color;
+            border-color: $gallery-color;
+            color: $second-color;
+            text-decoration: none;          
+        }  
+    
+        .page-link {
+            background-color: $second-color; 
+            color: $gallery-color; 
+            border-color: $gallery-color;
+            &:hover, &:focus, &:active, &:disabled {
+                background-color: $gallery-color;
+                border-color: $gallery-color;
+                color: $second-color;
+                text-decoration: none;
+            }      
+        }    
+    }
+}
+
+
+
+
