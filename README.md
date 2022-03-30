@@ -1,3 +1,33 @@
+# Galería de imágenes
+Desarrollo de una aplicación web con el objetivo de gestionar “mis
+imágenes favoritas”.
+
+# Requisitos
+● Como usuario será necesario poder ver una lista de mis
+imágenes (imagen y un título)
+● Como usuario será necesario poder añadir imágenes a una
+base de datos
+● Como usuario será necesario poder eliminar una imágen
+● Como usuario será necesario poder editar una imagen existente
+● Extras: autenticación, con el objetivo de que cada usuario tenga su galería personal de imágenes
+
+## Installation
+```
+npm install && npm run dev
+composer install
+composer update
+composer require laravel/ui
+composer require livewire/livewire
+composer require flightsadmin/livewire-crud
+php artisan crud:install
+```
+## Testing
+- php artisan test
+
+## By
+- Rubén Bertólez Chicote
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

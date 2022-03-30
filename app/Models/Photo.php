@@ -17,7 +17,7 @@ class Photo extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 	
 }
