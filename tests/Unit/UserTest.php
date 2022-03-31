@@ -9,16 +9,6 @@ use Illuminate\Database\Eloquent\Collection;
 
 class UserTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function test_example()
-    {
-        $this->assertTrue(true);
-    }
-
     public function test_creation_user_is_working()
     {
         $user = new User;
@@ -27,8 +17,8 @@ class UserTest extends TestCase
     }
     public function test_a_user_has_many_photos()
     {
-        $user = new User;
-        //$user = User::factory()->create();
+        //$user = new User;
+        $user = User::factory()->create();
         $this->assertInstanceOf(Collection::class, $user->photos);
     }
 }
