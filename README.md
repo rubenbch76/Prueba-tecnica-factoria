@@ -13,13 +13,9 @@ base de datos
 
 ## Installation
 ```
-npm install && npm run dev
 composer install
 composer update
-composer require laravel/ui
-composer require livewire/livewire
-composer require flightsadmin/livewire-crud
-php artisan crud:install
+npm install && npm run dev
 ```
 ## Testing
 - php artisan test
